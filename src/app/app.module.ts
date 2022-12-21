@@ -6,15 +6,19 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    TableComponent
+    TableComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

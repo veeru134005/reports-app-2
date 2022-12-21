@@ -5,8 +5,7 @@
     <div class="container-fluid">
       <select class="btn btn-mini" style="border-color: black">
         <option>-Plan Name-</option>
-        <option>Arogya</option>
-        <option>Ashwaya</option>
+        <option *ngFor="let pName of planName">{{ pName.planName }}</option>
       </select>
 
       <!-- Collapsible wrapper -->
@@ -15,8 +14,7 @@
 
         <select class="btn btn-mini m-2" style="border-color: black">
           <option>-plan Status</option>
-          <option>Arogya</option>
-          <option>Ashwaya</option>
+          <option *ngFor="let status of planStatus">{{ status.status }}</option>
         </select>
         <select class="btn btn-mini m-2" style="border-color: black">
           <option>select</option>
@@ -38,5 +36,28 @@
       </div>
     </div>
   </nav>
-  <app-table></app-table>
+  <table class="table table-striped">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">S.NO</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">MobileNumber</th>
+        <th scope="col">Gender</th>
+        <th scope="col">SSN</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let apirdata of reportsData">
+        <th scope="row">{{ apirdata.userId }}</th>
+        <td>{{ apirdata.name }}</td>
+        <td>{{ apirdata.email }}</td>
+        <td>{{ apirdata.mobileNum }}</td>
+        <td>{{ apirdata.gender }}</td>
+        <td>{{ apirdata.ssn }}</td>
+        <td>{{ apirdata.planStatus }}</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
